@@ -117,7 +117,20 @@ export default function Home() {
     <div className="h-screen flex flex-col overflow-hidden bg-background">
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-4 border-b border-border shrink-0">
-        <h1 className="text-xl font-semibold tracking-tight">Title Motion Lab</h1>
+        <div className="flex items-center gap-3">
+          <h1 className="text-xl font-semibold tracking-tight">Title Motion Lab</h1>
+          <span className="text-sm text-muted-foreground">
+            Built by{' '}
+            <a
+              href="https://www.itsprade.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              itsprade
+            </a>
+          </span>
+        </div>
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm" onClick={reset}>
             Reset
