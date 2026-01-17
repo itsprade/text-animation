@@ -129,7 +129,7 @@ export function ControlsPanel({
   };
 
   return (
-    <div className="p-4 space-y-6">
+    <div className="p-4 pb-8 space-y-6">
       {/* Text Input */}
       <div className="space-y-2">
         <Label htmlFor="text-input">Title Text</Label>

@@ -25,22 +25,6 @@ export function PreviewStage({
   animationKey,
   onComplete,
 }: PreviewStageProps) {
-  // Get background color
-  const backgroundColor = useMemo(() => {
-    switch (state.background.type) {
-      case 'transparent':
-        return 'transparent';
-      case 'light':
-        return '#ffffff';
-      case 'dark':
-        return '#0a0a0a';
-      case 'custom':
-        return state.background.customColor;
-      default:
-        return 'transparent';
-    }
-  }, [state.background]);
-
   // Get text color based on background
   const textColor = useMemo(() => {
     if (state.background.type === 'dark') {
@@ -55,6 +39,20 @@ export function PreviewStage({
     return font?.variable || 'var(--font-inter)';
   }, [state.typography.fontFamily]);
 
+  // Get outer container background
+  const outerBackgroundColor = useMemo(() => {
+    switch (state.background.type) {
+      case 'dark':
+        return '#0a0a0a';
+      case 'light':
+        return '#ffffff';
+      case 'custom':
+        return state.background.customColor;
+      default:
+        return undefined;
+    }
+  }, [state.background]);
+
   // Checkerboard pattern for transparent background
   const checkerboardStyle = state.background.type === 'transparent' ? {
     backgroundImage: `
@@ -65,7 +63,7 @@ export function PreviewStage({
     `,
     backgroundSize: '20px 20px',
     backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
-  } : {};
+  } : { backgroundColor: outerBackgroundColor };
 
   // Render the active preset
   const renderPreset = () => {
@@ -109,24 +107,19 @@ export function PreviewStage({
       style={checkerboardStyle}
     >
       <div
-        className="flex items-center justify-center p-12 rounded-lg min-w-[300px]"
-        style={{ backgroundColor }}
+        className="text-center max-w-4xl"
+        style={{
+          fontFamily,
+          fontSize: `${state.typography.fontSize}px`,
+          fontWeight: state.typography.fontWeight,
+          letterSpacing: `${state.typography.letterSpacing}em`,
+          lineHeight: state.typography.lineHeight,
+          textTransform: state.typography.textTransform,
+          color: textColor,
+        }}
+        aria-label={state.text}
       >
-        <div
-          className="text-center max-w-4xl"
-          style={{
-            fontFamily,
-            fontSize: `${state.typography.fontSize}px`,
-            fontWeight: state.typography.fontWeight,
-            letterSpacing: `${state.typography.letterSpacing}em`,
-            lineHeight: state.typography.lineHeight,
-            textTransform: state.typography.textTransform,
-            color: textColor,
-          }}
-          aria-label={state.text}
-        >
-          {renderPreset()}
-        </div>
+        {renderPreset()}
       </div>
     </div>
   );

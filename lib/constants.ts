@@ -91,7 +91,7 @@ export const DEFAULT_TYPOGRAPHY: TypographySettings = {
 
 // Default background setting
 export const DEFAULT_BACKGROUND: BackgroundSetting = {
-  type: 'transparent',
+  type: 'dark',
   customColor: '#ffffff',
 };
 
