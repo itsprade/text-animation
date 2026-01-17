@@ -28,7 +28,7 @@ interface Particle {
 export function ParticleBurst({
   text,
   global,
-  typography,
+  typography: _typography,
   settings,
   animationKey,
   onComplete,

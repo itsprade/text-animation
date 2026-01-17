@@ -18,7 +18,7 @@ interface WordSlideUpProps {
 export function WordSlideUp({
   text,
   global,
-  typography,
+  typography: _typography,
   settings,
   animationKey,
   onComplete,

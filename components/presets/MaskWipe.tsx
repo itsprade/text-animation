@@ -34,7 +34,7 @@ function getClipPath(direction: MaskWipeSettings['direction'], progress: 'start'
 export function MaskWipe({
   text,
   global,
-  typography,
+  typography: _typography,
   settings,
   animationKey,
   onComplete,

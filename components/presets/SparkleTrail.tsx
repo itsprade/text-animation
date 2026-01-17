@@ -38,7 +38,7 @@ const SPARKLE_COLORS = [
 export function SparkleTrail({
   text,
   global,
-  typography,
+  typography: _typography,
   settings,
   animationKey,
   onComplete,

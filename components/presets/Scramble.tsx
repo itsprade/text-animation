@@ -19,7 +19,7 @@ interface ScrambleProps {
 export function Scramble({
   text,
   global,
-  typography,
+  typography: _typography,
   settings,
   animationKey,
   onComplete,

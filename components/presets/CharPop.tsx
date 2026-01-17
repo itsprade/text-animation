@@ -16,7 +16,7 @@ interface CharPopProps {
 export function CharPop({
   text,
   global,
-  typography,
+  typography: _typography,
   settings,
   animationKey,
   onComplete,

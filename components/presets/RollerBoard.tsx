@@ -24,7 +24,7 @@ interface ColumnData {
 export function RollerBoard({
   text,
   global,
-  typography,
+  typography: _typography,
   settings,
   animationKey,
   onComplete,

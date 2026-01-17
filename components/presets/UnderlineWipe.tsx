@@ -18,7 +18,7 @@ interface UnderlineWipeProps {
 export function UnderlineWipe({
   text,
   global,
-  typography,
+  typography: _typography,
   settings,
   animationKey,
   onComplete,

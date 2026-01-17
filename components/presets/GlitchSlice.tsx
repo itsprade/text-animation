@@ -18,7 +18,7 @@ interface GlitchSliceProps {
 export function GlitchSlice({
   text,
   global,
-  typography,
+  typography: _typography,
   settings,
   animationKey,
   onComplete,
@@ -51,7 +51,6 @@ export function GlitchSlice({
   // Calculate duration
   const duration = global.duration / 1000;
   const glitchDuration = duration * 0.7;
-  const settleDuration = duration * 0.3;
 
   // Layer colors for RGB effect
   const layerColors = settings.colorSeparation

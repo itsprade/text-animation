@@ -18,7 +18,7 @@ interface BlurRevealProps {
 export function BlurReveal({
   text,
   global,
-  typography,
+  typography: _typography,
   settings,
   animationKey,
   onComplete,

@@ -153,7 +153,6 @@ export default function Home() {
           <PreviewStage
             state={state}
             animationKey={animationKey}
-            animationState={animationState}
             onComplete={onAnimationComplete}
           />
         </div>

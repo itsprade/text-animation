@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo } from 'react';
-import { AppState, AnimationState } from '@/types';
+import { AppState } from '@/types';
 import { FONT_OPTIONS } from '@/lib/constants';
 import { Scramble } from './presets/Scramble';
 import { BlurReveal } from './presets/BlurReveal';
@@ -17,14 +17,12 @@ import { SparkleTrail } from './presets/SparkleTrail';
 interface PreviewStageProps {
   state: AppState;
   animationKey: number;
-  animationState: AnimationState;
   onComplete: () => void;
 }
 
 export function PreviewStage({
   state,
   animationKey,
-  animationState,
   onComplete,
 }: PreviewStageProps) {
   // Get background color
