@@ -3,6 +3,7 @@ export type PresetKey =
   | 'scramble'
   | 'blur'
   | 'roller'
+  | 'flipboard'
   | 'wordSlideUp'
   | 'charPop'
   | 'maskWipe'
@@ -88,6 +89,17 @@ export interface RollerSettings {
   direction: 'up' | 'down';
 }
 
+// Flipboard preset settings
+export interface FlipboardSettings {
+  alphabet: 'uppercase' | 'lowercase' | 'numbers' | 'full';
+  flipsPerChar: number;       // 3-15
+  flipRandomness: number;     // 0-1
+  cardColor: string;          // card background
+  textColor: string;          // text on cards
+  showDivider: boolean;       // horizontal divider line
+  perspective: number;        // 3D perspective depth
+}
+
 // Word slide up preset settings
 export interface WordSlideUpSettings {
   yDistance: number;      // px
@@ -145,6 +157,7 @@ export type PresetSettings =
   | ScrambleSettings
   | BlurSettings
   | RollerSettings
+  | FlipboardSettings
   | WordSlideUpSettings
   | CharPopSettings
   | MaskWipeSettings
@@ -164,6 +177,7 @@ export interface AppState {
   scramble: ScrambleSettings;
   blur: BlurSettings;
   roller: RollerSettings;
+  flipboard: FlipboardSettings;
   wordSlideUp: WordSlideUpSettings;
   charPop: CharPopSettings;
   maskWipe: MaskWipeSettings;

@@ -13,6 +13,7 @@ import { PresetSelector } from './PresetSelector';
 import { ScrambleControls } from './PresetControls/ScrambleControls';
 import { BlurRevealControls } from './PresetControls/BlurRevealControls';
 import { RollerBoardControls } from './PresetControls/RollerBoardControls';
+import { FlipboardControls } from './PresetControls/FlipboardControls';
 import { WordSlideUpControls } from './PresetControls/WordSlideUpControls';
 import { CharPopControls } from './PresetControls/CharPopControls';
 import { MaskWipeControls } from './PresetControls/MaskWipeControls';
@@ -72,6 +73,13 @@ export function ControlsPanel({
           <RollerBoardControls
             settings={state.roller}
             onChange={(settings) => updatePresetSettings('roller', settings)}
+          />
+        );
+      case 'flipboard':
+        return (
+          <FlipboardControls
+            settings={state.flipboard}
+            onChange={(settings) => updatePresetSettings('flipboard', settings)}
           />
         );
       case 'wordSlideUp':

@@ -7,6 +7,7 @@ import { DEFAULT_STATE } from '@/lib/constants';
 import { PreviewStage } from '@/components/PreviewStage';
 import { ControlsPanel } from '@/components/ControlsPanel';
 import { ExportDialog } from '@/components/ExportDialog';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
 
 export default function Home() {
@@ -138,6 +139,7 @@ export default function Home() {
           <Button size="sm" onClick={() => setExportOpen(true)}>
             Export
           </Button>
+          <ThemeToggle />
         </div>
       </header>
 

@@ -6,6 +6,7 @@ import type {
   ScrambleSettings,
   BlurSettings,
   RollerSettings,
+  FlipboardSettings,
   WordSlideUpSettings,
   CharPopSettings,
   MaskWipeSettings,
@@ -60,6 +61,7 @@ export const PRESET_META: PresetMeta[] = [
   { key: 'scramble', name: 'Scramble', description: 'Text shuffles into place' },
   { key: 'blur', name: 'Blur Reveal', description: 'Appears from blur' },
   { key: 'roller', name: 'Roller Board', description: 'Airport board style' },
+  { key: 'flipboard', name: 'Flipboard', description: 'Split-flap display' },
   { key: 'wordSlideUp', name: 'Word Slide Up', description: 'Words slide from below' },
   { key: 'charPop', name: 'Char Pop', description: 'Characters pop in' },
   { key: 'maskWipe', name: 'Mask Wipe', description: 'Clip-path reveal' },
@@ -120,6 +122,17 @@ export const DEFAULT_ROLLER: RollerSettings = {
   spins: 5,
   spinRandomness: 0.25,
   direction: 'up',
+};
+
+// Default flipboard settings
+export const DEFAULT_FLIPBOARD: FlipboardSettings = {
+  alphabet: 'uppercase',
+  flipsPerChar: 8,
+  flipRandomness: 0.3,
+  cardColor: '#1a1a1a',
+  textColor: '#ffffff',
+  showDivider: true,
+  perspective: 400,
 };
 
 // Default word slide up settings
@@ -187,6 +200,7 @@ export const DEFAULT_STATE: AppState = {
   scramble: DEFAULT_SCRAMBLE,
   blur: DEFAULT_BLUR,
   roller: DEFAULT_ROLLER,
+  flipboard: DEFAULT_FLIPBOARD,
   wordSlideUp: DEFAULT_WORD_SLIDE_UP,
   charPop: DEFAULT_CHAR_POP,
   maskWipe: DEFAULT_MASK_WIPE,

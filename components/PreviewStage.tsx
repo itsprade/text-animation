@@ -6,6 +6,7 @@ import { FONT_OPTIONS } from '@/lib/constants';
 import { Scramble } from './presets/Scramble';
 import { BlurReveal } from './presets/BlurReveal';
 import { RollerBoard } from './presets/RollerBoard';
+import { Flipboard } from './presets/Flipboard';
 import { WordSlideUp } from './presets/WordSlideUp';
 import { CharPop } from './presets/CharPop';
 import { MaskWipe } from './presets/MaskWipe';
@@ -82,6 +83,8 @@ export function PreviewStage({
         return <BlurReveal {...commonProps} settings={state.blur} />;
       case 'roller':
         return <RollerBoard {...commonProps} settings={state.roller} />;
+      case 'flipboard':
+        return <Flipboard {...commonProps} settings={state.flipboard} />;
       case 'wordSlideUp':
         return <WordSlideUp {...commonProps} settings={state.wordSlideUp} />;
       case 'charPop':

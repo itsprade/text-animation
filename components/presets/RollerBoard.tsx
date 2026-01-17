@@ -96,11 +96,11 @@ export function RollerBoard({
     }
   };
 
-  // Character height in em
+  // Character height in em - using lineHeight for consistency
   const charHeight = 1.2;
 
   return (
-    <span className="inline-flex">
+    <span className="inline-flex flex-wrap">
       {columns.map((column, index) => {
         const stackLength = column.stack.length;
         const duration = (stackLength / maxStackLength) * (global.duration / 1000);
@@ -119,6 +119,7 @@ export function RollerBoard({
           );
         }
 
+        const totalHeight = stackLength * charHeight;
         const finalY = settings.direction === 'up'
           ? -(stackLength - 1) * charHeight
           : 0;
@@ -129,11 +130,19 @@ export function RollerBoard({
         return (
           <span
             key={`${key}-${index}`}
-            className="inline-block relative overflow-hidden"
-            style={{ height: `${charHeight}em` }}
+            className="inline-block relative overflow-hidden align-top"
+            style={{
+              height: `${charHeight}em`,
+              lineHeight: `${charHeight}em`,
+            }}
           >
+            {/* Invisible character for width */}
+            <span className="invisible">{column.target}</span>
             <motion.span
-              className="inline-flex flex-col absolute left-0 top-0"
+              className="flex flex-col absolute left-0 w-full"
+              style={{
+                top: 0,
+              }}
               initial={{ y: `${initialY}em` }}
               animate={{ y: `${finalY}em` }}
               transition={{
@@ -147,7 +156,10 @@ export function RollerBoard({
                 <span
                   key={charIndex}
                   className="flex items-center justify-center"
-                  style={{ height: `${charHeight}em` }}
+                  style={{
+                    height: `${charHeight}em`,
+                    lineHeight: `${charHeight}em`,
+                  }}
                 >
                   {char}
                 </span>
